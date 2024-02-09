@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Page 2</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="app demo">
+        <h1>Welcome, <%= username %>!</h1>
+        <h2>API Usage Information:</h2>
+        <form action="/api_usage" method="POST">
+            <label for="workspace_title">Workspace Title:</label>
+            <input type="text" id="workspace_title" name="workspace_title" required>
+
+            <label for="api_token_name">API Token Name:</label>
+            <input type="text" id="api_token_name" name="api_token_name" required>
+
+            <label for="duration">Duration (ms):</label>
+            <input type="number" id="duration" name="duration" required>
+
+            <label for="started_at">Started At:</label>
+            <input type="text" id="started_at" name="started_at" required>
+
+            <label for="service_name">Service Name:</label>
+            <input type="text" id="service_name" name="service_name" required>
+
+            <label for="service_cost_per_ms">Service Cost Per Millisecond:</label>
+            <input type="number" id="service_cost_per_ms" name="service_cost_per_ms" required>
+
+            <button type="submit">Add API Usage</button>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Workspace Title</th>
+                    <th>API Token Name</th>
+                    <th>Duration (ms)</th>
+                    <th>Started At</th>
+                    <th>Service Name</th>
+                    <th>Service Cost Per ms</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% apiUsage.forEach(item => { %>
+                    <tr>
+                        <td><%= item.workspace_title %></td>
+                        <td><%= item.api_token_name %></td>
+                        <td><%= item.duration %></td>
+                        <td><%= item.started_at %></td>
+                        <td><%= item.service_name %></td>
+                        <td><%= item.service_cost_per_ms %></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

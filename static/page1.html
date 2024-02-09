@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 1</title>
+    <!-- Ваши стили CSS здесь (если есть) -->
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to Page 1</h1>
+    </header>
+
+    <main>
+        <!-- Форма для создания новой записи -->
+        <form action="/api-usage" method="POST">
+            <label for="service_name">Service Name:</label>
+            <input type="text" id="service_name" name="service_name" required>
+
+            <label for="service_cost_per_ms">Service Cost Per Millisecond:</label>
+            <input type="number" id="service_cost_per_ms" name="service_cost_per_ms" required>
+
+            <button type="submit">Add API Usage</button>
+        </form>
+
+        <!-- Здесь можете добавить отображение существующих данных (например, таблицу) -->
+    </main>
+
+    <footer>
+        <!-- Здесь можете добавить футер (если нужен) -->
+    </footer>
+
+</body>
+</html>
